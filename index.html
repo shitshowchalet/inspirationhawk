@@ -15,7 +15,7 @@
 	    var message = null;
 	    message = $.deparam.querystring();
 	    console.log(message.m);
-	    $("#inspiration #message").text(message.m);
+	    $("#message").text(message.m);
 	  });
 	</script>
 	<style type="text/css">
@@ -32,7 +32,17 @@
 	    text-outline: 2px 2px #000;
 	    -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: black;
-      float: left;
+	  }
+	  #message{
+	    /*display: inline-block;*/
+	    float: left;
+	  }
+	  #inspiration{
+	    position: absolute;
+	    top: 380px;
+	    left: 0px;
+	    width: 100%;
+	    text-align: center;
 	  }
 	</style>
 </head>
@@ -42,7 +52,7 @@
     </div>
     <div id="inspiration">
       SCREEEEEEEEEEEEEEEE<br/>
-      EEEEEEEEEEEEEEEEEEE
+      EEEEEEEEEEEEEEEEEEEE
     </div>
   </div>
 </body>
