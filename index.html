@@ -17,6 +17,10 @@
 	    console.log(message.m);
 	    $("#message").text(message.m);
 	  });
+	  
+    function playSound(soundURL) {
+      $("#screee").html("<embed src=\""+soundURL+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />");
+    }
 	</script>
 	<style type="text/css">
 	  #SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE{
@@ -44,6 +48,11 @@
 	    width: 100%;
 	    text-align: center;
 	  }
+	  #play_button{
+	    position: absolute;
+	    top: 520px;
+	    left: 39%;
+	  }
 	</style>
 </head>
 <body>
@@ -54,6 +63,12 @@
       SCREEEEEEEEEEEEEEEE<br/>
       EEEEEEEEEEEEEEEEEEEE
     </div>
+    <div id="play_button">
+      <a href="#" onclick="playSound('hawk.mp3'); return false;">
+        <img src="play.png" />
+      </a>
+    </div>
+    <span id="screee"></span>
   </div>
 </body>
 </html>
