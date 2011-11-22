@@ -15,7 +15,11 @@
 	    var message = null;
 	    message = $.deparam.querystring();
 	    console.log(message.m);
-	    $("#message").text(message.m);
+	    if( message.m ){
+  	    $("#message").text(message.m);
+	    }else{
+	      $("#result").hide();
+	    }
 	  });
 	</script>
 	<style type="text/css">
@@ -45,8 +49,7 @@
            2px 2px 0 #000;
 	  }
 	  #message{
-	    /*display: inline-block;*/
-	    float: left;
+	    width: 100%;
 	  }
 	  #inspiration{
 	    position: absolute;
@@ -56,30 +59,45 @@
 	    text-align: center;
 	  }
 	  #play_button{
-	    position: absolute;
-	    top: 520px;
-	    left: 0px;
-	    width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+	    width: 400px;
 	    text-align: center;
 	  }
 	  #play_img{
 	    cursor: pointer;
 	  }
+	  #need_inspiration {
+	    width: 600px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 30px;
+	    text-align: center;
+	  }
+	  #need_inspiration input{
+	    font-size: 250%;
+	  }
 	</style>
 </head>
 <body>
-  <div id="SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
-    <div id="message">
-    </div>
-    <div id="inspiration">
-      SCREEEEEEEEEEEEEEEE<br/>
-      EEEEEEEEEEEEEEEEEEEE
+  <div id="result">
+    <div id="SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
+      <div id="message">
+      </div>
+      <div id="inspiration">
+        SCREEEEEEEEEEEEEEEE<br/>
+        EEEEEEEEEEEEEEEEEEEE
+      </div>
     </div>
     <div id="play_button" onclick="$('#screee')[0].play(); return false;">
       <img id="play_img" src="play.png" />
       <audio id="screee" src="hawk.mp3" preload="auto"></audio>
     </div>
   </div>
+  <form id="need_inspiration" method="GET" action="">
+    <input type="text" name="m"/><input type="submit" value="Help me, Inspiration Hawk!"/>
+  </form>
 </body>
 <script type="text/javascript">
 
