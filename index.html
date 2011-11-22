@@ -17,10 +17,6 @@
 	    console.log(message.m);
 	    $("#message").text(message.m);
 	  });
-	  
-    function playSound(soundURL) {
-      $("#screee").html("<embed src=\""+soundURL+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />");
-    }
 	</script>
 	<style type="text/css">
 	  #SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE{
@@ -58,7 +54,12 @@
 	  #play_button{
 	    position: absolute;
 	    top: 520px;
-	    left: 39%;
+	    left: 0px;
+	    width: 100%;
+	    text-align: center;
+	  }
+	  #play_img{
+	    cursor: pointer;
 	  }
 	</style>
 </head>
@@ -70,12 +71,10 @@
       SCREEEEEEEEEEEEEEEE<br/>
       EEEEEEEEEEEEEEEEEEEE
     </div>
-    <div id="play_button">
-      <a href="#" onclick="playSound('hawk.mp3'); return false;">
-        <img src="play.png" />
-      </a>
+    <div id="play_button" onclick="$('#screee')[0].play(); return false;">
+      <img id="play_img" src="play.png" />
+      <audio id="screee" src="hawk.mp3" preload="auto"></audio>
     </div>
-    <span id="screee"></span>
   </div>
 </body>
 </html>
